@@ -18,8 +18,8 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "event")
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Event {
