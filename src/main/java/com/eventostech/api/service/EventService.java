@@ -22,7 +22,7 @@ import java.util.UUID;
 @Service
 public class EventService {
 
-    @Value("${aws.bucket.name")
+    @Value("${aws.bucket.name}")
     private String bucketName;
 
     @Autowired
