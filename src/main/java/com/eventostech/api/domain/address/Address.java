@@ -22,7 +22,7 @@ public class Address {
     private UUID id;
 
     private String city;
-    private Integer uf;
+    private String uf;
 
     @ManyToOne
     @JoinColumn(name = "event_id")
@@ -52,11 +52,11 @@ public class Address {
         this.event = event;
     }
 
-    public Integer getUf() {
+    public String getUf() {
         return uf;
     }
 
-    public void setUf(Integer uf) {
+    public void setUf(String uf) {
         this.uf = uf;
     }
 }

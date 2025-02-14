@@ -1,7 +1,5 @@
 package com.eventostech.api.domain.event;
 
-import org.springframework.web.multipart.MultipartFile;
-
 import java.util.Date;
 import java.util.UUID;
 
