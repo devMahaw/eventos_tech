@@ -1,12 +1,15 @@
 package com.eventostech.api.controller;
 
 import com.eventostech.api.domain.event.EventRequestDTO;
+import com.eventostech.api.domain.event.EventResponseDTO;
 import com.eventostech.api.service.EventService;
 import com.eventostech.api.domain.event.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * @author marcelo.dantas
@@ -31,5 +34,11 @@ public class EventController {
         EventRequestDTO eventRequestDTO = new EventRequestDTO(title, description, date, city, state, remote, eventUrl, image);
         Event newEvent = this.eventService.createEvent(eventRequestDTO);
         return ResponseEntity.ok(newEvent);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<EventResponseDTO>> getEvents(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
+        List<EventResponseDTO> allEvents = this.eventService.getEvents(page, size);
+        return ResponseEntity.ok(allEvents);
     }
 }
